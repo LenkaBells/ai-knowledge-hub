@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A practical, approachable guide to using AI confidently at work.">
+<title>AI Knowledge Hub — Work smarter with AI</title>
+<style>
+:root{--ink:#17243a;--muted:#64748b;--line:#e5eaf1;--paper:#f6f8fb;--white:#fff;--navy:#142943;--teal:#24b49a;--blue:#4779df;--purple:#8864d8;--amber:#d69a32;--shadow:0 12px 34px rgba(26,43,69,.08);--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input{font:inherit}a{color:inherit;text-decoration:none}.shell{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}
+.sidebar{background:#fff;border-right:1px solid var(--line);padding:26px 18px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:28px}
+.brand{display:flex;gap:11px;align-items:center;padding:0 8px}.brand-mark{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#1a3657,#24b49a);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px}.brand strong{display:block;font-size:15px;letter-spacing:-.3px}.brand small{color:var(--muted);font-size:11px}
+.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#9aa5b5;font-weight:800;padding:0 11px;margin-bottom:8px}.nav{display:grid;gap:4px}.nav a{padding:10px 11px;border-radius:10px;color:#59677b;font-size:13px;font-weight:600;display:flex;gap:11px;align-items:center}.nav a:hover,.nav a.active{background:#eef5f5;color:#147c70}.nav .ico{width:20px;text-align:center;font-size:15px}.side-note{margin-top:auto;background:#f2f7f7;border:1px solid #e1eeee;border-radius:14px;padding:14px;font-size:12px;color:#55706f}.side-note b{display:block;color:#245e59;margin-bottom:4px}
+main{min-width:0}.topbar{height:68px;background:rgba(255,255,255,.88);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,56px);position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.crumb{font-size:12px;color:var(--muted)}.top-actions{display:flex;gap:9px;align-items:center}.pill{font-size:11px;font-weight:700;padding:6px 10px;border:1px solid var(--line);border-radius:99px;background:white;color:#64748b}.menu-btn{display:none;border:1px solid var(--line);background:white;border-radius:9px;padding:7px 10px}
+.content{max-width:1180px;margin:auto;padding:34px clamp(20px,4vw,56px) 70px}.hero{background:linear-gradient(115deg,#142943 0%,#1d4560 64%,#176c68 100%);color:white;border-radius:24px;padding:clamp(26px,5vw,54px);position:relative;overflow:hidden;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-100px;top:-130px;box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 75px rgba(255,255,255,.025)}.eyebrow{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:#8fe2d2;font-weight:800}.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.06;letter-spacing:-2px;margin:14px 0 15px;max-width:650px}.hero p{color:#d2e0e9;max-width:590px;margin:0 0 25px;font-size:15px}.searchbar{display:flex;align-items:center;gap:10px;max-width:620px;background:white;border-radius:12px;padding:6px 7px 6px 15px;position:relative;z-index:1}.searchbar span{color:#8793a3}.searchbar input{border:0;outline:0;flex:1;min-width:0;padding:10px 0;color:var(--ink);font-size:13px}.searchbar button,.btn{border:0;background:var(--teal);color:#062f2b;font-weight:800;border-radius:9px;padding:10px 15px;cursor:pointer}.searchbar button:hover,.btn:hover{filter:brightness(.96)}
+.section{margin-top:42px;scroll-margin-top:90px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:17px}.section-head h2{font-size:22px;letter-spacing:-.6px;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.linkish{color:#178879;font-size:12px;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:19px;box-shadow:0 3px 14px rgba(28,48,74,.025);min-width:0}.card:hover{box-shadow:var(--shadow);transform:translateY(-1px);transition:.18s}.card-icon{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-size:18px;margin-bottom:13px}.mint{background:#e5f6f2;color:#168b78}.blue{background:#eaf0ff;color:#426bd0}.violet{background:#f1ebff;color:#805bc8}.gold{background:#fff4df;color:#ae741a}.rose{background:#ffedf0;color:#c05d70}.card h3{font-size:15px;margin:0 0 6px;letter-spacing:-.2px}.card p{font-size:12px;color:var(--muted);margin:0 0 12px}.tag{display:inline-block;background:#f2f5f8;border-radius:99px;padding:4px 8px;font-size:10px;color:#64748b;font-weight:700}
+.callout{background:#eaf5f3;border:1px solid #d7ebe7;border-radius:16px;padding:19px 21px;display:flex;gap:15px;align-items:flex-start}.callout .symbol{font-size:22px}.callout strong{display:block;font-size:14px;margin-bottom:3px}.callout p{margin:0;color:#54716f;font-size:12px}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.framework{border:1px solid var(--line);border-radius:14px;background:white;padding:17px}.framework-row{display:grid;grid-template-columns:32px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #edf0f4}.framework-row:last-child{border:0}.letter{width:29px;height:29px;border-radius:9px;background:#e8f5f2;color:#147b6d;display:grid;place-items:center;font-weight:900}.framework-row b{font-size:13px}.framework-row p{font-size:12px;color:var(--muted);margin:1px 0 0}
+.example{background:#172b43;color:#e8f0f6;border-radius:14px;padding:18px}.example small{color:#9edbd0;font-weight:800;text-transform:uppercase;letter-spacing:1px;font-size:10px}.example p{font-size:12px;color:#d6e1e9}.example blockquote{margin:12px 0 0;padding:12px;border-left:2px solid #4bc1aa;background:rgba(255,255,255,.06);border-radius:0 8px 8px 0;font-size:12px}
+.tool-list{display:grid;gap:9px}.tool-row{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;background:white;border:1px solid var(--line);border-radius:13px;padding:13px}.tool-row .card-icon{margin:0}.tool-row b{font-size:13px}.tool-row p{margin:2px 0 0;color:var(--muted);font-size:11px}.tool-row span:last-child{font-size:10px;color:#178879;font-weight:800;text-align:right}
+.library-tools{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}.library-tools input,.library-tools select{border:1px solid var(--line);border-radius:10px;background:white;padding:10px 12px;font-size:12px;color:var(--ink)}.library-tools input{flex:1;min-width:180px}.prompt-card{display:flex;flex-direction:column;gap:9px}.prompt-card .prompt-text{font-size:12px;color:#59677b;background:#f6f8fb;border:1px solid #edf0f4;padding:12px;border-radius:10px;flex:1}.prompt-meta{display:flex;justify-content:space-between;align-items:center}.copy{background:white;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer;color:#315c59}.copy:hover{background:#edf8f5}
+details{background:white;border:1px solid var(--line);border-radius:12px;padding:14px 16px}details+details{margin-top:8px}summary{cursor:pointer;font-size:13px;font-weight:800}details p{font-size:12px;color:var(--muted);margin:9px 0 0}
+.footer{border-top:1px solid var(--line);margin-top:45px;padding-top:20px;color:#8a96a6;font-size:11px;display:flex;justify-content:space-between;gap:15px}
+.empty{padding:25px;text-align:center;color:var(--muted);font-size:13px;grid-column:1/-1}
+@media(max-width:900px){.shell{grid-template-columns:210px 1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}}
+@media(max-width:650px){.shell{display:block}.sidebar{position:fixed;z-index:10;left:-270px;width:250px;transition:left .2s;box-shadow:var(--shadow)}.sidebar.open{left:0}.menu-btn{display:block}.topbar{padding:0 16px}.content{padding:22px 16px 45px}.grid{grid-template-columns:1fr}.hero{border-radius:18px}.hero h1{letter-spacing:-1.2px}.pill{display:none}.footer{display:block}.tool-row{grid-template-columns:38px 1fr}.tool-row span:last-child{grid-column:2;text-align:left}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#home"><span class="brand-mark">AI</span><span><strong>AI Knowledge Hub</strong><small>Practical AI at work</small></span></a>
+  <div><div class="nav-label">Explore</div><nav class="nav">
+    <a class="active" href="#home"><span class="ico">⌂</span>Overview</a>
+    <a href="#prompting"><span class="ico">✳</span>Prompting academy</a>
+    <a href="#tools"><span class="ico">◈</span>Choose your AI tool</a>
+    <a href="#work"><span class="ico">▦</span>AI at work</a>
+    <a href="#mcp"><span class="ico">⌘</span>MCP & integrations</a>
+    <a href="#responsible"><span class="ico">◇</span>Responsible AI</a>
+    <a href="#library"><span class="ico">☷</span>Prompt library</a>
+  </nav></div>
+  <div class="side-note"><b>Small steps. Better work.</b>Start with the task, choose the right capability, and always review the result.</div>
+</aside>
+<main>
+<header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button><span class="crumb">Knowledge Hub / <b id="crumbName">Overview</b></span></div><div class="top-actions"><span class="pill">Learning resource</span><span class="pill">Prototype v0.1</span></div></header>
+<div class="content">
+<section class="hero" id="home">
+  <div class="eyebrow">Your practical guide to AI</div>
+  <h1>Work smarter.<br>Learn AI by doing.</h1>
+  <p>Find the right AI approach for the task in front of you. Explore practical techniques, workplace examples and prompts you can adapt with confidence.</p>
+  <div class="searchbar"><span>⌕</span><input id="globalSearch" placeholder="Search prompts, techniques or use cases…" aria-label="Search the knowledge hub"><button id="searchBtn">Search</button></div>
+</section>
+
+<section class="section" aria-labelledby="startTitle">
+ <div class="section-head"><div><h2 id="startTitle">Where would you like to start?</h2><p>Explore the essentials, one practical topic at a time.</p></div><span class="linkish">7 learning areas</span></div>
+ <div class="grid">
+  <a class="card" href="#prompting"><div class="card-icon mint">✳</div><h3>Prompting academy</h3><p>Give AI clearer instructions and get more useful results.</p><span class="tag">Techniques & examples</span></a>
+  <a class="card" href="#tools"><div class="card-icon blue">◈</div><h3>Choose your AI tool</h3><p>Understand when a chat, research tool, custom assistant or integration makes sense.</p><span class="tag">Decision guide</span></a>
+  <a class="card" href="#work"><div class="card-icon violet">▦</div><h3>AI at work</h3><p>Explore everyday tasks where AI can help you get started.</p><span class="tag">Workplace scenarios</span></a>
+  <a class="card" href="#mcp"><div class="card-icon gold">⌘</div><h3>MCP & integrations</h3><p>Learn how AI can securely work with connected tools and data.</p><span class="tag">Connected workflows</span></a>
+  <a class="card" href="#responsible"><div class="card-icon rose">◇</div><h3>Responsible AI</h3><p>Protect information, verify outputs and keep human judgement in the loop.</p><span class="tag">Safe use</span></a>
+  <a class="card" href="#library"><div class="card-icon mint">☷</div><h3>Prompt library</h3><p>Find adaptable starting prompts for common workplace tasks.</p><span class="tag">Copy & customise</span></a>
+ </div>
+</section>
+
+<section class="section" id="prompting">
+ <div class="section-head"><div><h2>Prompting academy</h2><p>A good prompt gives the AI enough context to produce a useful first draft.</p></div><span class="linkish">Learn the fundamentals</span></div>
+ <div class="split">
+  <div class="framework">
+   <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:14px">M.A.S.T.E.R. framework</b><span class="tag">A practical interpretation</span></div>
+   <p style="font-size:11px;color:var(--muted);margin:5px 0 8px">Framework acronyms vary. This version is a simple checklist you can adapt.</p>
+   <div class="framework-row"><span class="letter">M</span><div><b>Mission</b><p>What do you want the AI to achieve?</p></div></div>
+   <div class="framework-row"><span class="letter">A</span><div><b>Audience</b><p>Who is the output for, and what do they know?</p></div></div>
+   <div class="framework-row"><span class="letter">S</span><div><b>Situation</b><p>What context, background or source material matters?</p></div></div>
+   <div class="framework-row"><span class="letter">T</span><div><b>Task</b><p>What specifically should the AI do?</p></div></div>
+   <div class="framework-row"><span class="letter">E</span><div><b>Expectations</b><p>What tone, constraints and quality criteria apply?</p></div></div>
+   <div class="framework-row"><span class="letter">R</span><div><b>Response format</b><p>Should the answer be a table, email, checklist or summary?</p></div></div>
+  </div>
+  <div style="display:grid;gap:12px">
+   <div class="example"><small>Example · Turn a vague prompt into a useful one</small><p><b>Instead of:</b> “Write an update about the project.”</p><p><b>Try:</b></p><blockquote>You are a project coordinator. Draft a concise weekly update for senior stakeholders. The project is two weeks behind because vendor testing is incomplete. Explain the impact, list the next actions and owners, and flag decisions needed. Use a calm, factual tone and headings for Status, Risks and Next steps. Do not invent missing details; mark them as questions.</blockquote></div>
+   <div class="card"><h3>ELI5 — Explain Like I'm 5</h3><p>Ask for a simple explanation using everyday language and an analogy. Useful when learning unfamiliar concepts or preparing to explain them to others.</p><span class="tag">Learning · Simplification</span></div>
+  </div>
+ </div>
+ <div class="grid" style="margin-top:14px">
+  <div class="card"><div class="card-icon blue">1→</div><h3>Give an example</h3><p>Few-shot prompting: show one or two examples of the style or structure you want the AI to follow.</p></div>
+  <div class="card"><div class="card-icon violet">↻</div><h3>Refine in rounds</h3><p>Start with a draft, then ask for specific improvements. You do not need the perfect prompt on the first try.</p></div>
+  <div class="card"><div class="card-icon gold">✓</div><h3>Set success criteria</h3><p>Tell the AI what a good answer must include, what to avoid and how uncertainty should be handled.</p></div>
+ </div>
+</section>
+
+<section class="section" id="tools">
+ <div class="section-head"><div><h2>Choose your AI tool</h2><p>Choose based on the job to be done—not because a feature sounds advanced.</p></div></div>
+ <div class="tool-list">
+  <div class="tool-row"><div class="card-icon mint">💬</div><div><b>Chat / conversation</b><p>Brainstorm, draft, explain, plan or iterate with an AI assistant.</p></div><span>Start here</span></div>
+  <div class="tool-row"><div class="card-icon blue">🔎</div><div><b>Web search or deep research</b><p>Explore current information, compare sources and investigate a topic. Verify important claims.</p></div><span>Research</span></div>
+  <div class="tool-row"><div class="card-icon violet">🧩</div><div><b>Custom GPT / specialised assistant</b><p>Use a configured assistant for a repeatable task, with defined instructions and possibly knowledge or tools.</p></div><span>Repeatable task</span></div>
+  <div class="tool-row"><div class="card-icon gold">⚙️</div><div><b>Skill or reusable workflow</b><p>Package instructions and resources for a task that should be performed consistently. Availability and meaning vary by platform.</p></div><span>Standardise</span></div>
+  <div class="tool-row"><div class="card-icon rose">📊</div><div><b>Data analysis</b><p>Work with spreadsheets or structured data, calculate, explore patterns and create charts—then validate results.</p></div><span>Analyse</span></div>
+  <div class="tool-row"><div class="card-icon mint">🔗</div><div><b>MCP / connected tools</b><p>Let an AI application access approved external tools or data sources, subject to permissions.</p></div><span>Connect</span></div>
+  <div class="tool-row"><div class="card-icon blue">🤖</div><div><b>Agentic workflow</b><p>For multi-step tasks where the system can plan and take permitted actions with appropriate oversight.</p></div><span>Multi-step</span></div>
+ </div>
+ <div class="callout" style="margin-top:13px"><span class="symbol">💡</span><div><strong>Quick rule of thumb</strong><p>If you need help thinking or drafting, start with chat. If you need current evidence, research. If you repeat a process, consider a reusable assistant or workflow. If the AI needs to interact with another system, investigate approved integrations.</p></div></div>
+</section>
+
+<section class="section" id="work">
+ <div class="section-head"><div><h2>AI at work</h2><p>Practical starting points for common tasks.</p></div></div>
+ <div class="grid">
+  <div class="card"><div class="card-icon mint">✉</div><h3>Draft an email</h3><p>Share the goal, recipient, key points and tone. Ask for a draft, then check names, facts and commitments.</p><span class="tag">Writing</span></div>
+  <div class="card"><div class="card-icon blue">▤</div><h3>Summarise a document</h3><p>Specify the audience, desired length and what to extract: decisions, risks, actions or open questions.</p><span class="tag">Knowledge work</span></div>
+  <div class="card"><div class="card-icon violet">▥</div><h3>Understand a spreadsheet</h3><p>Use an approved data-analysis capability. Ask for trends, anomalies and assumptions; verify calculations.</p><span class="tag">Data</span></div>
+  <div class="card"><div class="card-icon gold">◷</div><h3>Prepare for a meeting</h3><p>Turn approved notes into an agenda, stakeholder questions, decision points and a preparation checklist.</p><span class="tag">Planning</span></div>
+  <div class="card"><div class="card-icon rose">✎</div><h3>Learn a new topic</h3><p>Ask for a beginner explanation, a worked example, a short quiz and suggested reliable sources.</p><span class="tag">Learning</span></div>
+  <div class="card"><div class="card-icon mint">◎</div><h3>Improve a process</h3><p>Describe the current steps and constraints. Ask AI to identify bottlenecks and propose options—not make unapproved changes.</p><span class="tag">Problem solving</span></div>
+ </div>
+</section>
+
+<section class="section" id="mcp">
+ <div class="section-head"><div><h2>MCP & integrations</h2><p>Connect AI applications to tools and information—with permission and care.</p></div></div>
+ <div class="split">
+  <div class="card"><div class="card-icon blue">⌘</div><h3>What is MCP?</h3><p>The Model Context Protocol (MCP) is an open protocol that helps AI applications connect to external data sources and tools through a consistent interface.</p><p>Think of it as a standardised connector: an AI application can discover and use capabilities exposed by an MCP server, when configured and authorised.</p><span class="tag">Protocol ≠ AI model</span></div>
+  <div class="card"><h3>Example workflow</h3><div style="display:grid;gap:8px;margin-top:12px"><div class="tool-row"><div class="card-icon mint">👤</div><div><b>Employee asks</b><p>“Find the latest approved travel policy.”</p></div></div><div style="text-align:center;color:#9aa5b5">↓</div><div class="tool-row"><div class="card-icon blue">🧠</div><div><b>AI application</b><p>Interprets the request and selects an authorised connector.</p></div></div><div style="text-align:center;color:#9aa5b5">↓</div><div class="tool-row"><div class="card-icon gold">🔌</div><div><b>Connected source</b><p>Returns permitted policy information.</p></div></div></div></div>
+ </div>
+ <div class="callout" style="margin-top:13px"><span class="symbol">🔐</span><div><strong>Integration safety checklist</strong><p>Use only approved connectors. Understand what data is shared, which actions are permitted, what permissions are granted and whether a human must approve changes. Never connect a work account to an unapproved service.</p></div></div>
+</section>
+
+<section class="section" id="responsible">
+ <div class="section-head"><div><h2>Responsible AI</h2><p>AI can accelerate work, but accountability remains with people.</p></div></div>
+ <div class="grid">
+  <div class="card"><div class="card-icon rose">◈</div><h3>Protect information</h3><p>Do not enter confidential, personal, regulated or customer data unless the tool and use are explicitly approved by your organisation.</p></div>
+  <div class="card"><div class="card-icon gold">✓</div><h3>Verify important claims</h3><p>AI can produce plausible but incorrect answers. Check facts, calculations, citations and source material.</p></div>
+  <div class="card"><div class="card-icon blue">⚖</div><h3>Watch for bias</h3><p>Consider whose perspective is missing. Review outputs for unfair assumptions, stereotypes or unequal impact.</p></div>
+  <div class="card"><div class="card-icon violet">👁</div><h3>Keep human oversight</h3><p>Review before sending, publishing, deciding or taking consequential action. Do not delegate accountability.</p></div>
+  <div class="card"><div class="card-icon mint">ⓘ</div><h3>Be transparent</h3><p>Follow workplace rules about disclosing AI assistance, documenting sources and retaining records.</p></div>
+  <div class="card"><div class="card-icon rose">⛔</div><h3>Check permissions</h3><p>Before using tools or integrations, confirm that you are authorised to access the data and perform the action.</p></div>
+ </div>
+ <details style="margin-top:14px"><summary>What should I do if an AI answer seems wrong?</summary><p>Pause. Ask the AI to identify assumptions and sources, verify the claim using trusted original material, correct the context and try again. If the issue affects a decision or sensitive work, consult the appropriate subject-matter expert.</p></details>
+ <details><summary>Can I paste company documents into any AI tool?</summary><p>No. Follow your organisation's data classification and approved-tool policies. If you are unsure whether a tool is approved for a type of information, do not upload it until you have checked.</p></details>
+</section>
+
+<section class="section" id="library">
+ <div class="section-head"><div><h2>Prompt library</h2><p>Use these as starting points. Replace the bracketed details and review the output.</p></div><span class="linkish" id="resultCount">6 prompts</span></div>
+ <div class="library-tools"><input id="promptSearch" placeholder="Search the prompt library…" aria-label="Search prompts"><select id="categoryFilter" aria-label="Filter prompts"><option value="all">All categories</option><option>Writing</option><option>Learning</option><option>Planning</option><option>Analysis</option><option>Problem solving</option></select></div>
+ <div class="grid" id="promptGrid">
+  <article class="card prompt-card" data-category="Writing" data-search="email writing tone draft"><div class="prompt-meta"><span class="tag">Writing</span><span class="tag">Beginner</span></div><h3>Draft a clear email</h3><div class="prompt-text">Act as a professional writing assistant. Draft an email to [recipient] about [purpose]. Include these key points: [points]. Use a [tone] tone and keep it [length]. If anything essential is missing, ask me before drafting.</div><button class="copy" data-copy="Act as a professional writing assistant. Draft an email to [recipient] about [purpose]. Include these key points: [points]. Use a [tone] tone and keep it [length]. If anything essential is missing, ask me before drafting.">Copy prompt ↗</button></article>
+  <article class="card prompt-card" data-category="Learning" data-search="eli5 explain learn analogy beginner"><div class="prompt-meta"><span class="tag">Learning</span><span class="tag">Beginner</span></div><h3>Explain a complex topic</h3><div class="prompt-text">Explain [topic] to someone with no prior knowledge. Use plain language, one everyday analogy and a simple example. Finish with three key takeaways and ask me one question to check my understanding.</div><button class="copy" data-copy="Explain [topic] to someone with no prior knowledge. Use plain language, one everyday analogy and a simple example. Finish with three key takeaways and ask me one question to check my understanding.">Copy prompt ↗</button></article>
+  <article class="card prompt-card" data-category="Planning" data-search="meeting agenda preparation decisions"><div class="prompt-meta"><span class="tag">Planning</span><span class="tag">Beginner</span></div><h3>Prepare for a meeting</h3><div class="prompt-text">Help me prepare for a [duration] meeting about [topic] with [attendees]. The desired outcome is [outcome]. Create an agenda with timings, useful questions and decisions to make. Highlight information I still need to gather.</div><button class="copy" data-copy="Help me prepare for a [duration] meeting about [topic] with [attendees]. The desired outcome is [outcome]. Create an agenda with timings, useful questions and decisions to make. Highlight information I still need to gather.">Copy prompt ↗</button></article>
+  <article class="card prompt-card" data-category="Analysis" data-search="summarise document actions risks"><div class="prompt-meta"><span class="tag">Analysis</span><span class="tag">Intermediate</span></div><h3>Summarise a document</h3><div class="prompt-text">Summarise the provided [document type] for [audience]. Organise the result into: purpose, key points, decisions, risks and actions. Distinguish what the document explicitly says from your interpretation. Do not invent missing information.</div><button class="copy" data-copy="Summarise the provided [document type] for [audience]. Organise the result into: purpose, key points, decisions, risks and actions. Distinguish what the document explicitly says from your interpretation. Do not invent missing information.">Copy prompt ↗</button></article>
+  <article class="card prompt-card" data-category="Problem solving" data-search="process bottleneck improvement options"><div class="prompt-meta"><span class="tag">Problem solving</span><span class="tag">Intermediate</span></div><h3>Improve a process</h3><div class="prompt-text">Review this process: [describe steps]. Our goal is [goal] and our constraints are [constraints]. Identify likely bottlenecks, ask clarifying questions, then suggest three improvement options with benefits, risks and effort. Do not assume we can change systems or policies.</div><button class="copy" data-copy="Review this process: [describe steps]. Our goal is [goal] and our constraints are [constraints]. Identify likely bottlenecks, ask clarifying questions, then suggest three improvement options with benefits, risks and effort. Do not assume we can change systems or policies.">Copy prompt ↗</button></article>
+  <article class="card prompt-card" data-category="Analysis" data-search="spreadsheet data trends anomalies"><div class="prompt-meta"><span class="tag">Analysis</span><span class="tag">Intermediate</span></div><h3>Explore a dataset</h3><div class="prompt-text">Using the approved dataset I provide, describe its structure, check for missing or unusual values, and identify notable trends. Explain your method and assumptions. Separate observations from possible explanations and suggest checks before decisions are made.</div><button class="copy" data-copy="Using the approved dataset I provide, describe its structure, check for missing or unusual values, and identify notable trends. Explain your method and assumptions. Separate observations from possible explanations and suggest checks before decisions are made.">Copy prompt ↗</button></article>
+ </div>
+</section>
+<footer class="footer"><span>AI Knowledge Hub · Prototype v0.1</span><span>Educational resource · Always follow your organisation's AI policies</span></footer>
+</div>
+</main>
+</div>
+<script>
+const sidebar=document.getElementById('sidebar');
+document.getElementById('menuBtn').addEventListener('click',()=>sidebar.classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));a.classList.add('active');sidebar.classList.remove('open');document.getElementById('crumbName').textContent=a.textContent.trim()}));
+const promptCards=[...document.querySelectorAll('.prompt-card')];
+function filterPrompts(){
+ const q=document.getElementById('promptSearch').value.toLowerCase().trim(),cat=document.getElementById('categoryFilter').value;let n=0;
+ promptCards.forEach(c=>{const ok=(cat==='all'||c.dataset.category===cat)&&((c.dataset.search+' '+c.innerText).toLowerCase().includes(q));c.style.display=ok?'flex':'none';if(ok)n++});
+ document.getElementById('resultCount').textContent=n+' prompt'+(n===1?'':'s');
+}
+document.getElementById('promptSearch').addEventListener('input',filterPrompts);
+document.getElementById('categoryFilter').addEventListener('change',filterPrompts);
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const original=b.textContent;try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='Copied ✓'}catch(e){b.textContent='Select text to copy'}setTimeout(()=>b.textContent=original,1600)}));
+function searchHub(){
+ const q=document.getElementById('globalSearch').value.toLowerCase().trim();if(!q)return;
+ const sections=[...document.querySelectorAll('main section')];let found=sections.find(s=>s.innerText.toLowerCase().includes(q));
+ if(found){found.scrollIntoView({behavior:'smooth'});document.getElementById('crumbName').textContent=found.querySelector('h1,h2')?.textContent||'Search result';}
+ else{document.getElementById('promptSearch').value=q;filterPrompts();document.getElementById('library').scrollIntoView({behavior:'smooth'});document.getElementById('crumbName').textContent='Prompt library';}
+}
+document.getElementById('searchBtn').addEventListener('click',searchHub);
+document.getElementById('globalSearch').addEventListener('keydown',e=>{if(e.key==='Enter')searchHub()});
+</script>
+</body>
+</html>
